@@ -19,24 +19,24 @@
 
     var methods = {},
 
-    //Set defauls for the control
-    defaults = {
-        data: [],
-        keepJSONItemsOnTop: false,
-        width: 260,
-        height: null,
-        background: "#eee",
-        selectText: "",
-        defaultSelectedIndex: null,
-        truncateDescription: true,
-        imagePosition: "left",
-        showSelectedHTML: true,
-        clickOffToClose: true,
-        onSelected: function () { }
-    },
+        //Set defauls for the control
+        defaults = {
+            data: [],
+            keepJSONItemsOnTop: false,
+            width: 260,
+            height: null,
+            background: '#eee',
+            selectText: '',
+            defaultSelectedIndex: null,
+            truncateDescription: true,
+            imagePosition: 'left',
+            showSelectedHTML: true,
+            clickOffToClose: true,
+            onSelected: function () { }
+        },
 
-    ddSelectHtml = '<div class="dd-select"><input class="dd-selected-value" type="hidden" /><a class="dd-selected"></a><span class="dd-pointer dd-pointer-down"></span></div>',
-    ddOptionsHtml = '<ul class="dd-options"></ul>';
+        ddSelectHtml = '<div class="dd-select"><input class="dd-selected-value" type="hidden" /><a class="dd-selected"></a><span class="dd-pointer dd-pointer-down"></span></div>',
+        ddOptionsHtml = '<ul class="dd-options"></ul>';
 
     //Public methods 
     methods.init = function (options) {
@@ -97,7 +97,7 @@
                     ddOptions.append('<li>' +
                         '<a class="dd-option">' +
                             (item.value ? ' <input class="dd-option-value" type="hidden" value="' + item.value + '" />' : '') +
-                            (item.imageSrc ? ' <img class="dd-option-image' + (options.imagePosition == "right" ? ' dd-image-right' : '') + '" src="' + item.imageSrc + '" />' : '') +
+                            (item.imageSrc ? ' <img class="dd-option-image' + (options.imagePosition == 'right' ? ' dd-image-right' : '') + '" src="' + item.imageSrc + '" />' : '') +
                             (item.text ? ' <div class="dd-option-text">' + item.text + '</div>' : '') +
                             (item.description ? ' <small class="dd-option-description dd-desc">' + item.description + '</small>' : '') +
                         '</a>' +
@@ -111,7 +111,7 @@
                     selectedIndex: -1,
                     selectedItem: null,
                     selectedData: null
-                }
+                };
                 obj.data('ddslick', pluginData);
 
                 //Check if needs to show the select text, otherwise show selected or default selection
@@ -154,7 +154,7 @@
             if (options.index)
                 selectIndex($(this), options.index);
         });
-    }
+    };
 
     //Public method to open drop down
     methods.open = function () {
@@ -192,7 +192,7 @@
                 $this.removeData('ddslick').unbind('.ddslick').replaceWith(originalElement);
             }
         });
-    }
+    };
 
     //Private: Select index
     function selectIndex(obj, index) {
@@ -222,7 +222,7 @@
         //If set to display to full html, add html
         if (settings.showSelectedHTML) {
             ddSelected.html(
-                    (selectedData.imageSrc ? '<img class="dd-selected-image' + (settings.imagePosition == "right" ? ' dd-image-right' : '') + '" src="' + selectedData.imageSrc + '" />' : '') +
+                    (selectedData.imageSrc ? '<img class="dd-selected-image' + (settings.imagePosition == 'right' ? ' dd-image-right' : '') + '" src="' + selectedData.imageSrc + '" />' : '') +
                     (selectedData.text ? '<div class="dd-selected-text">' + selectedData.text + '</div>' : '') +
                     (selectedData.description ? '<small class="dd-selected-description dd-desc' + (settings.truncateDescription ? ' dd-selected-description-truncated' : '') + '" >' + selectedData.description + '</small>' : '')
                 );
