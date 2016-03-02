@@ -4,13 +4,22 @@ var gulp = require("gulp");
 var rename = require("gulp-rename");
 var uglify = require("gulp-uglify");
 var eslint = require("gulp-eslint");
+var cleanCSS = require('gulp-clean-css');
+
+gulp.task("clean-css", function() {
+    return gulp
+        .src('src/*.css')
+        .pipe(cleanCSS())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest("dist"));
+});
 
 gulp.task("uglify", ["lint:tdd"], function() {
     return gulp
-        .src(__dirname + "/src/jquery.ddslick.js")
+        .src('src/*.js')
         .pipe(uglify())
-        .pipe(rename("jquery.ddslick.min.js"))
-        .pipe(gulp.dest(__dirname + "/dist"));
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest("dist"));
 });
 
 gulp.task("lint:tdd", function() {
@@ -30,8 +39,9 @@ gulp.task("lint", function() {
 
 gulp.task("watch", function() {
     gulp.watch(__dirname + "/src/**/*.js", ["uglify"]);
+    gulp.watch(__dirname + "/src/**/*.css", ["clean-css"]);
 });
 
-gulp.task("build", ["uglify"]);
+gulp.task("build", ["uglify", "clean-css"]);
 gulp.task("test", ["lint"]);
 gulp.task("default", ["watch"]);
