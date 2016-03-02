@@ -120,7 +120,7 @@
                         '<a class="dd-option">' +
                             (item.value ? ' <input class="dd-option-value" type="hidden" value="' + item.value + '" />' : '') +
                             (item.imageSrc ? ' <img class="dd-option-image' + (options.imagePosition == "right" ? ' dd-image-right' : '') + '" src="' + item.imageSrc + '" />' : '') +
-                            (item.text ? ' <label class="dd-option-text">' + item.text + '</label>' : '') +
+                            (item.text ? ' <div class="dd-option-text">' + item.text + '</div>' : '') +
                             (item.description ? ' <small class="dd-option-description dd-desc">' + item.description + '</small>' : '') +
                         '</a>' +
                     '</li>');
@@ -245,7 +245,7 @@
         if (settings.showSelectedHTML) {
             ddSelected.html(
                     (selectedData.imageSrc ? '<img class="dd-selected-image' + (settings.imagePosition == "right" ? ' dd-image-right' : '') + '" src="' + selectedData.imageSrc + '" />' : '') +
-                    (selectedData.text ? '<label class="dd-selected-text">' + selectedData.text + '</label>' : '') +
+                    (selectedData.text ? '<div class="dd-selected-text">' + selectedData.text + '</div>' : '') +
                     (selectedData.description ? '<small class="dd-selected-description dd-desc' + (settings.truncateDescription ? ' dd-selected-description-truncated' : '') + '" >' + selectedData.description + '</small>' : '')
                 );
 
