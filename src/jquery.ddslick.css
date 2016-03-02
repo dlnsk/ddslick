@@ -16,6 +16,9 @@
     display: block;
     padding: 10px;
     font-weight: bold;
+    text-decoration: none;
+    background-color: white;
+    color: black;
 }
 .dd-pointer {
     width: 0;
