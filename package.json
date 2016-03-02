@@ -18,9 +18,10 @@
   "homepage": "https://github.com/jsmodules/ddslick#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-eslint": "^1.1.1",
+    "gulp-clean-css": "^2.0.3",
+    "gulp-eslint": "^2.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.1"
+    "gulp-uglify": "^1.5.3"
   },
   "dependencies": {
     "jquery": "^2.1.4"
