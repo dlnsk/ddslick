@@ -99,6 +99,7 @@
 
                 //Add classes and append ddSelectHtml & ddOptionsHtml to the container
                 obj.addClass('dd-container').append(ddSelectHtml).append(ddOptionsHtml);
+                obj.find('.dd-selected-value').prop('name', obj.prop('id'));
 
                 //Get newly created ddOptions and ddSelect to manipulate
                 var ddSelect = obj.find('.dd-select'),
